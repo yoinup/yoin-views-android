@@ -1,0 +1,23 @@
+
+{{#with view}}
+
+  {{view Yva.FooterOptionView 
+    tab="venues" 
+    icon="J" 
+    currentTabViewBinding="currentTabView" 
+    manager=manager }}
+
+  {{view Yva.FooterOptionView 
+    tab="wallet" 
+    icon="b"
+    currentTabViewBinding="currentTabView" 
+    manager=manager }}
+
+
+  {{view Yva.FooterOptionView
+    tab="me" 
+    icon="p" 
+    currentTabViewBinding="currentTabView" 
+    manager=manager }}
+
+{{/with}}

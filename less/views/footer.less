@@ -1,0 +1,89 @@
+
+@import 'sizes';
+@import 'colors';
+
+
+@footer-height: 49px;
+@footer-color:@grey10;
+@footer-middle-color: @orange01;
+
+// --------------------------- functions
+
+.footer_gradient (@gradient-color: white) {
+	background-image: url(../assets/images/BG2_50.png), -moz-linear-gradient(top, @gradient-color 0%, darken(@gradient-color,15%) 40%, darken(@gradient-color,30%) 100%); 
+	background-image: url(../assets/images/BG2_50.png), -webkit-gradient(linear, left top, left bottom, color-stop(0%, @gradient-color), color-stop(40%, darken(@gradient-color,15%) ), color-stop(100%, darken(@gradient-color,30%))); 
+}
+
+.footer_active_gradient (@gradient-color: white) {
+	background-image: url(../assets/images/BG2_50.png), -moz-linear-gradient(top, darken(@gradient-color,50%) 0%,  darken(@gradient-color,20%) 100%); 
+	background-image: url(../assets/images/BG2_50.png), -webkit-gradient(linear, left top, left bottom,  color-stop(0%, darken(@gradient-color,50%) ), color-stop(100%, darken(@gradient-color,20%))); 
+}
+
+.tabs_border (@tab_border_up: green) {
+	-webkit-box-shadow: 0 -1px 0 0 @tab_border_up;
+	box-shadow: 0 -1px 0 0 @tab_border_up;
+}
+
+.tabs_border_clear {
+	-webkit-box-shadow: 0 0 0 0 #000;
+	box-shadow: 0 0 0 0 #000;
+}
+// ------------------------------------------------------------------------------------------------------------ 
+
+
+
+.footer.android {
+
+	z-index: 1000;
+	bottom:0;
+	position: absolute;
+	height: @footer-height;
+	background-color:black;
+
+	border-top: 2px solid @black00;
+
+	-webkit-box-shadow: 0 -1px 9px 0 rgba(0, 0, 0, 0.4);
+	box-shadow: 0px -1px 9px 0 rgba(0, 0, 0, 0.4);
+
+	display: table;
+	width: 100%;
+ 
+
+
+	> .footer-option {
+
+		position: relative;
+    display: table-cell;
+    vertical-align: middle;
+
+		width: 33.333333%;
+		height: 100%;
+
+		.footer_gradient (@footer-color);
+		.tabs_border (lighten(@footer-color,20%));
+	
+	}
+	
+	> .footer-option.is-selected, > .footer-option:active {
+		.footer_active_gradient (@footer-color);
+		.tabs_border_clear;
+	}
+	
+
+	> .footer-option.is-icon-big:before {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-left: -17px;
+		margin-top: -25px;
+		
+
+		-webkit-background-clip: text;
+		color: @grey01;
+		text-shadow: 0 1px rgba(0,0,0,0.4), 0px -1px rgba(0,0,0,0.4), 1px 0px rgba(0,0,0,0.4), -1px 0px rgba(0,0,0,0.4);
+
+		line-height: @footer-height;
+
+	}
+
+}
