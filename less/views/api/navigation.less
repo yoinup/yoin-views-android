@@ -1,0 +1,21 @@
+
+@import 'sizes';
+@import 'animations';
+@import 'appanimations';
+
+.navigation {
+
+  -webkit-transform: translate3d(0,0,0);
+
+  -webkit-transition-property: -webkit-transform;
+  // 1ms to fire the event in the view layer
+  -webkit-transition-duration: 1ms;
+  -webkit-transition-timing-function: @ease-animation-style; 
+
+}
+
+.navigation.is-animated {
+
+  -webkit-transition-duration: @modal-duration/2;
+
+}
