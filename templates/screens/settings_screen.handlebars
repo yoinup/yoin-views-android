@@ -57,8 +57,34 @@
 
 	</div>
 
+	<div class="space by-two"></div>
+
+	<div class="detail-text is-center is-not-in-box">
+    {{I18n note_privacy}}
+  </div>
+
 	<div class="space by-one"></div>
 
+  <div class="box">
+
+		<div class="box-content">
+
+			<div class="box-content-element two-column-table">
+
+				<div class="main-text main left-column">
+					{{I18n privacy}}
+				</div>
+
+				<div class="control right-column">
+          {{view Yn.SwitchButtonView isOnBinding="isCheckinOn" 
+            switchAction="changePrivacy" }}
+				</div>
+
+			</div>
+
+		</div>
+
+  </div>
 
 	{{view Yn.MainButtonView
 		class="is-red"
